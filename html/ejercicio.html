@@ -1,89 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="author" content="AbrahanBadel">
     <title>Ejemplo JS # 1</title>
-    <script src="../Js/utilidades.js"></script>
+    <script src="../js/utilidades.js"></script>
     <link rel="stylesheet" href="../css/style.css">
 </head>
-
 <body>
+    
     <script>
-
-        var h1 = crearNodoTexto("h1", "6 products with 25% descount BUY NOW..!");
+        var h1 = crearNodoTexto("h1", "15+ Web Design Projects with Source code..!");
         adicionarNodoBody(h1);
+
 
         var hr = crearNodo("hr");
         adicionarNodoBody(hr);
 
-        function crearNodo(tipoNodo, atributos) {
-            var nodo = document.createElement(tipoNodo);
-            if (atributos) {
-                for (var key in atributos) {
-                    if (atributos.hasOwnProperty(key)) {
-                        nodo.setAttribute(key, atributos[key]);
-                    }
-                }
-            }
-            return nodo;
-        }
-
-        function crearTabla(imagenes) {
-    var tabla = crearNodo("table");
-
-    for (var i = 0; i < 2; i++) {
-        var fila = crearNodo("tr");
-
-        for (var j = 0; j < 3; j++) {
-            var celda = crearNodo("td");
-
-            var imagen = crearNodo("img", {
-                src: imagenes[i * 3 + j],
-                alt: "Imagen " + (i * 3 + j + 1)
-            });
-
-            var comprarButton = crearBoton("Comprar");
-            var agregarAlCarroButton = crearBoton("Agregar al Carro");
-            var detallesButton = crearBoton("Mas Detalles");
-
-
-            celda.appendChild(imagen);
-            celda.appendChild(comprarButton);
-            celda.appendChild(agregarAlCarroButton);
-            celda.appendChild(detallesButton);
-
-            fila.appendChild(celda);
-        }
-        tabla.appendChild(fila);
-    }
-
-    return tabla;
-}
-
-function crearBoton(texto) {
-    var boton = crearNodo("button");
-    boton.innerText = texto;
-    return boton;
-}
-
-        var imagenes = [
-            "../recursos/silla.png",
-            "../recursos/bici.png",
-            "../recursos/caja de herramientas.png",
-            "../recursos/escritorio electrico.png",
-            "../recursos/nevera.png",
-            "../recursos/portatil.png",
-        ];
-
-        var tabla = crearTabla(imagenes);
-
-        document.body.appendChild(tabla);
-
+        var tabla = crearTablaConImagenes(imagenes);
+        adicionarNodoBody(tabla);
+       
     </script>
-
 </body>
-
 </html>

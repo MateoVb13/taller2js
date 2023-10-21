@@ -1,19 +1,10 @@
-body{
-    background-color: rgb(241, 241, 227);
-}
-
-img{
-    width: 400px;
-    height: 400px;
-    margin-top: 15px;
-}
-
-h1{
+h1 {
     text-align: center;
 }
-
-button{
-    margin-right: 7%;
-    margin-left: 3%;
-    
+img {
+    width: 300px;
+    margin: 70px; 
+}
+button {
+    margin: 10px;
 }
